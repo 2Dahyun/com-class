@@ -1,0 +1,61 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+// 1. 회원 테이블
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+
+// 2. 식당 테이블
+model Restaurant {
+  id        String   @id @default(uuid())
+  name      String
+  category  String
+  image     String?
+  menus     Menu[]
+  orders    Order[]
+}
+
+// 3. 메뉴 테이블
+model Menu {
+  id           String      @id @default(uuid())
+  name         String
+  price        Int
+  restaurantId String
+  restaurant   Restaurant  @relation(fields: [restaurantId], references: [id])
+  orderItems   OrderItem[]
+}
+
+// 4. 주문 메인 테이블
+model Order {
+  id           String      @id @default(uuid())
+  userId       String
+  user         User        @relation(fields: [userId], references: [id])
+  restaurantId String
+  restaurant   Restaurant  @relation(fields: [restaurantId], references: [id])
+  totalPrice   Int
+  status       String      @default("접수")
+  createdAt    DateTime    @default(now())
+  orderItems   OrderItem[]
+}
+
+// 5. 주문 상세 테이블
+model OrderItem {
+  id       String @id @default(uuid())
+  orderId  String
+  order    Order  @relation(fields: [orderId], references: [id])
+  menuId   String
+  menu     Menu   @relation(fields: [menuId], references: [id])
+  quantity Int
+}
