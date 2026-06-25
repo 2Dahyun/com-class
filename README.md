@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+교수님 안녕하세요.
 
-## Getting Started
+컴퓨터과학개론 수강 중인 202211747 이다현입니다.
 
-First, run the development server:
+발표 영상을 제출한 후 뒤늦게 확인해 보니, 렌더링 과정에서 오류가 발생하여 영상에 음성이 포함되지 않은 상태로 저장된 것을 발견했습니다. 제출 당시에는 정상적으로 저장되었다고 생각하여 확인하지 못했는데, 이후 다시 검토하는 과정에서 문제를 알게 되었습니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+이 사실을 늦게 확인한 탓에 원본 파일을 복구하고 편집하는 과정에서 제출 시간을 넘겨, 보고서와 발표 영상 링크를 LMS에 정상적으로 제출하지 못했습니다. 과제 제출 전 파일을 꼼꼼히 확인했어야 했는데 죄송합니다..
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+지각 제출이 허용되지 않는다는 점은 알고 있지만, 그럼에도 불구하고 혹시라도 검토해 주실 수 있을까 하는 마음에 수정한 발표 영상과 관련 자료를 함께 LMS 쪽지로 보내드렸습니다.
+https://drive.google.com/file/d/1_eeaoMjCi5evdoLO5NpoUCXvlIbtaoQN/view?usp=drive_link
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+한 학기 동안 좋은 강의를 제공해 주셔서 진심으로 감사드립니다. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+다시 한번 늦은 제출과 불편을 끼쳐드려 죄송합니다.
 
-## Learn More
+감사합니다.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+이다현 드림
