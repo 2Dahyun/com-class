@@ -8,40 +8,33 @@ export default function Home() {
   const [isSpinning, setIsSpinning] = useState(false);
   const categories = ['치킨', '한식', '피자', '베이커리', '일식', '분식']; // 추천할 음식 종류
 
-  // 🎰 룰렛 돌리기 함수
-  const spinRoulette = () => {
-    if (isSpinning) return;
-    setIsSpinning(true);
-    setRouletteResult(null);
+// 🎰 룰렛 돌리기 함수
+const spinRoulette = () => {
+  if (isSpinning) return;
+  setIsSpinning(true);
+  setRouletteResult(null);
 
-    let currentDelay = 40; // ⚡ 처음에는 엄청나게 빠른 속도 (40ms)
-    const maxDelay = 600;   // 🐢 마지막엔 서서히 느려짐 (600ms)
-    let index = 0;
+  let currentDelay = 40;
+  const maxDelay = 600;
+  let index = Math.floor(Math.random() * categories.length); // 🎲 시작 위치를 랜덤으로!
 
-    const run = () => {
-      // 배열 순서대로 다음 메뉴를 계속 보여주며 뺑뺑이 돌리기
-      index = (index + 1) % categories.length;
-      const currentSelection = categories[index];
-      setRouletteResult(currentSelection);
+  const run = () => {
+    index = (index + 1) % categories.length;
+    const currentSelection = categories[index];
+    setRouletteResult(currentSelection);
 
-      // 🎯 핵심 알고리즘: 돌릴 때마다 딜레이를 조금씩 늘려서 "촤르르륵 멈추는 효과" 연출
-      currentDelay += 35;
+    currentDelay += 35;
 
-      if (currentDelay < maxDelay) {
-        // 아직 돌 때면 다음 바퀴 예약
-        setTimeout(run, currentDelay);
-      } else {
-        // 멈췄을 때!
-        setIsSpinning(false);
+    if (currentDelay < maxDelay) {
+      setTimeout(run, currentDelay);
+    } else {
+      setIsSpinning(false);
+      setTimeout(() => {
+        alert(`🎰 [😇오늘의 먹내림🌪️]\n\n✨ 🎶추천 음식은 바로 "${currentSelection}" 입니다! ✨\n\n맛집 리스트에서 골라 담아보세요!`);
+      }, 100);
+    }
+  };
 
-        // 0.1초 뒤 타이밍 맞춰서 축하 효과 알림창 띄우기
-        setTimeout(() => {
-          alert(`🎰 [😇오늘의 먹내림🌪️]\n\n✨ 🎶추천 음식은 바로 "${currentSelection}" 입니다! ✨\n\n맛집 리스트에서 골라 담아보세요!`);
-        }, 100);
-      }
-    };
-
-    // 룰렛 시동!
     setTimeout(run, currentDelay);
   };
 
