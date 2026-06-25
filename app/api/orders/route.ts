@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { prisma } from '@/lib/prisma'
 
 // 🚀 주문 저장하기 (ID 매핑 충돌 방지 완전체 버전)
 export async function POST(req: Request) {
